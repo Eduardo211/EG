@@ -4,6 +4,6 @@
 # for the next 5 years
 
 # Questions to ask yourself:
-# 1. What type of loop do I use? A "while" loop or a "for" loop
+# 1. What type of loop do I use? A "while" loop or a "for" loop, why?
 # 2. What is the mathematical equation for calculating
 # the salary after the 2% raise?
