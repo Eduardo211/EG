@@ -10,3 +10,4 @@
 # number to the user.
 
 # You need to "import random" for this program
+import random
