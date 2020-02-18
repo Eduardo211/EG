@@ -13,4 +13,10 @@
 # the game pieces
 # 2. Use two different colors to represent the two players
 
+# Topics that will be covered in this project:
+# 1. How to use the turtle module to draw a square (3x3)
+# 2. How to change the default image of a turtle object
+# 3. How to use turtle module to write text on the screen
+# 4. How to find the coordinates of the turtle (xcor, ycor)
+
 # import turtle

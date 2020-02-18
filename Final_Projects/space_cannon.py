@@ -6,4 +6,5 @@
 # Your program displays a congratulating message
 # when an alien is hit
 
-# import turtle
+import turtle
+import random

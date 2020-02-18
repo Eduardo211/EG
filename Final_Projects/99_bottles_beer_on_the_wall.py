@@ -23,4 +23,8 @@
 
 # you need the following "import"
 # in order to use the "turtle" module
+
+# Google the internet to find out how to change
+# the default image of a turtle object
+
 import turtle
