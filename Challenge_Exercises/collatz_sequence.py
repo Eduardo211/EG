@@ -13,7 +13,18 @@
 # then print out the Collatz sequence for the positive integer
 
 # Prompt user for the input (don't forget to validate the input)
+while True:
+    try:
+        number = int(input("Please enter a positive integer: "))
+        if number <= 0:
+            print("The number must be positive. ")
+        else:
+            break
+    except ValueError:
+        print("It's not a valid number. ")
 
+# if we reach here, it means the number is valid
+print(number)
 # What type of loop should we use?
 
 # The sequence should start with the number user chose
