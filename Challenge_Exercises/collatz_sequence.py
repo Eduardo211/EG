@@ -24,7 +24,14 @@ while True:
         print("It's not a valid number. ")
 
 # if we reach here, it means the number is valid
-print(number)
+print(number, end=' ')
+while number != 1:
+    if number % 2 == 0: # an even number
+        number = number // 2
+    else:
+        number = number * 3 + 1
+    print(number, end=' ')
+print()
 # What type of loop should we use?
 
 # The sequence should start with the number user chose

@@ -1,21 +1,29 @@
 import random
 
-answerNumber = random.randint(1,9)
-if answerNumber == 1:
-    print('It is certain')
-elif answerNumber == 2:
-    print('It is decidedly so')
-elif answerNumber == 3:
-    print('Yes')
-elif answerNumber == 4:
-    print('Reply hazy try again')
-elif answerNumber == 5:
-    print('Ask again later')
-elif answerNumber == 6:
-    print('Concentrate and ask again')
-elif answerNumber == 7:
-    print('My reply is no')
-elif answerNumber == 8:
-    print('Outlook not so good')
-elif answerNumber == 9:
-    print('Very doubtful')
+def getFortune(answerNumber):
+    if answerNumber == 1:
+        return 'It is certain'
+    elif answerNumber == 2:
+        return 'It is decidedly so'
+    elif answerNumber == 3:
+        return 'Yes'
+    elif answerNumber == 4:
+        return 'Reply hazy try again'
+    elif answerNumber == 5:
+        return 'Ask again later'
+    elif answerNumber == 6:
+        return  'Concentrate and ask again'
+    elif answerNumber == 7:
+        return 'My reply is no'
+    elif answerNumber == 8:
+        return 'Outlook not so good'
+    elif answerNumber == 9:
+        return 'Very doubtful'
+
+for number in range(1,10):
+    fortune = getFortune(number)
+    print(fortune)
+
+r = random.randint(1,9)
+myForturne = getFortune(r)
+print(myForturne)
