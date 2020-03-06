@@ -13,27 +13,33 @@
 # then print out the Collatz sequence for the positive integer
 
 # Prompt user for the input (don't forget to validate the input)
-while True:
-    try:
-        number = int(input("Please enter a positive integer: "))
-        if number <= 0:
-            print("The number must be positive. ")
-        else:
-            break
-    except ValueError:
-        print("It's not a valid number. ")
-
+def user_input():
+    while True:
+        try:
+            n = int(input("Please enter a positive integer: "))
+            if n <= 0:
+                print("The number must be positive. ")
+            else:
+                return n
+        except ValueError:
+            print("It's not a valid number. ")
 # if we reach here, it means the number is valid
-print(number, end=' ')
-while number != 1:
-    if number % 2 == 0: # an even number
-        number = number // 2
-    else:
-        number = number * 3 + 1
-    print(number, end=' ')
-print()
+print(n)
+
+def collatz(num):
+    print(num, end=' ')
+    while num != 1:
+        if num % 2 == 0:  # an even number
+            num = num // 2
+        else:
+            num = num * 3 + 1
+        print(num, end=' ')
+    print()
 # What type of loop should we use?
+
+
+number = user_input()
+collatz(number)
 
 # The sequence should start with the number user chose
 # and end with 1
-

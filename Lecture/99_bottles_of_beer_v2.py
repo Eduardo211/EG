@@ -16,11 +16,13 @@ def get_more_beer():
           get_plurality(bottle_start_amount), "of beer on the wall ")
 
 
-for bottle_count in range(bottle_start_amount, 0, -1):
-    print(f'{bottle_count} {get_plurality(bottle_count)} of beer on the wall, {bottle_count} '
-          f'{get_plurality(bottle_count)} of beer...')
-    print(
-        f'Take one down and pass it around, {bottle_count - 1} {get_plurality((bottle_count - 1))} of beer on the '
-        f'wall.\n')
+def print_lyrics():
+    for bottle_count in range(bottle_start_amount, 0, -1):
+        print(f'{bottle_count} {get_plurality(bottle_count)} of beer on the wall, {bottle_count} '
+              f'{get_plurality(bottle_count)} of beer.')
+        print(f'Take one down and pass it around, {bottle_count - 1} {get_plurality((bottle_count - 1))} of beer on the '
+            f'wall.\n')
 
+
+print_lyrics()
 get_more_beer()

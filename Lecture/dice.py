@@ -4,18 +4,24 @@ import random
 MIN = 1
 MAX = 6
 
+def roll_dice():
+    print('Rolling the dice...')
+    print('Their values are: ')
+    print(random.randint(MIN, MAX))
+    print(random.randint(MIN, MAX))
+
+def get_input():
+    user_input = input("Roll them again? (y = yes): ")
+    return user_input.upper()
+
 
 def main():
     # create a variable to control the loop
-    again = 'y'
+    again = 'Y'
 
-    while again == 'y' or again == 'Y':
-        print('Rolling the dice...')
-        print('Their values are: ')
-        print(random.randint(MIN, MAX))
-        print(random.randint(MIN, MAX))
-
-        again = input('Roll them again? (y = yes): ')
+    while again == 'Y':
+        roll_dice()
+        again = get_input()
 
 
 main()
