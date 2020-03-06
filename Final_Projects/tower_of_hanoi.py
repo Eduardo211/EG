@@ -24,3 +24,5 @@
 # Your program should repeat the above steps until
 # the game is over
 
+# This program is worth 100 points
+

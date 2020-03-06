@@ -9,5 +9,7 @@
 # guess the correct number, then print out the correct
 # number to the user.
 
+# This program is worth 20 points
+
 # You need to "import random" for this program
 import random

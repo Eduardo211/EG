@@ -27,4 +27,6 @@
 # Google the internet to find out how to change
 # the default image of a turtle object
 
+# This program is worth 40 points
+
 import turtle

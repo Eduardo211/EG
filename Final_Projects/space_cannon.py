@@ -6,5 +6,7 @@
 # Your program displays a congratulating message
 # when an alien is hit
 
+# This program is worth 40 points
+
 import turtle
 import random

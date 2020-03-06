@@ -19,4 +19,6 @@
 # 3. How to use turtle module to write text on the screen
 # 4. How to find the coordinates of the turtle (xcor, ycor)
 
+# This program is worth 100 points
+
 # import turtle
