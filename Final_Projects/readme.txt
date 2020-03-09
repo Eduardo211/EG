@@ -1,3 +1,7 @@
+You are NOT allowed to use any third-party Python modules to complete your final project(s), such as PyGame,
+NumPy, and etc. You must use the built-in modules to complete your project(s). Any usage of third-party
+modules will automatically earn you a "0" for your project(s).
+
 The total points for your final project: 100
 Two of the projects are worth 100 points each and the rest is worth either 20 points or 40 points
 You may choose how many projects you would like to complete, but the total points must be
