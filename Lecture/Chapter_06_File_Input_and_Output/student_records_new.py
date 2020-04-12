@@ -3,46 +3,53 @@
 # the students.txt file
 import os
 
+
+def main():
+    choice = ''
+    while choice.upper() != 'Q':
+        choice = print_menu_options()
+        if choice == 'W':
+            save_student_records()
+        elif choice == 'R':
+            read_student_records()
+        elif choice == 'E':
+            edit_student_record()
+        elif choice == 'D':
+            delete_student_record()
+
 def edit_student_record():
     found = False
     print()
     print('=== Edit a student record ===')
-    # Open the original file for input and create a temporary file for output
+    search = input('Enter the name of the student: ')
     stu_file = open('students.txt', 'r')
     temp_file = open('temp.txt', 'w')
-    # Get the name of the student record to be modified
-    search_name = input('Enter the name of the student: ')
-    # Read the first Name field from the original file
-    name = stu_file.readline().rstrip('\n')
-    # While the Name field is not empty:
+    name = stu_file.readline().rstrip('\n')  # the first line is the name field
     while name != '':
-        # Read the ID Number field and the Major field
         id_num = stu_file.readline().rstrip('\n')
         major = stu_file.readline().rstrip('\n')
-        if name == search_name:
-            # Get the new value for the Major
+        gpa = stu_file.readline().rstrip('\n')
+        if name == search:
+            print(f'Current Major is {major}. ', end='')
             new_major = input('Enter the new Major: ')
-            # Write the new data to the temporary file
+            print(f'Current GPA is {gpa}. ', end='')
+            new_gpa = input('Enter the new GPA: ')
             temp_file.write(name + '\n')
             temp_file.write(id_num + '\n')
             temp_file.write(new_major + '\n')
+            temp_file.write(new_gpa + '\n')
             found = True
         else:
-            # Write the existing record to the temporary file
             temp_file.write(name + '\n')
             temp_file.write(id_num + '\n')
             temp_file.write(major + '\n')
-
-        # Read the next Name field
+            temp_file.write(gpa + '\n')
         name = stu_file.readline().rstrip('\n')
 
-    # Close the original file and the temporary file
     stu_file.close()
     temp_file.close()
 
-    # Delete the original file
     os.remove('students.txt')
-    # Rename the temporary file , giving it the name of the original file
     os.rename('temp.txt', 'students.txt')
 
     if found:
@@ -50,6 +57,51 @@ def edit_student_record():
     else:
         print('The student record was not found in the file.')
 
+
+def delete_student_record():
+    print()
+    print('=== Delete a student record ===')
+    search = input('Enter the name of the student: ')
+    stu_file = open('students.txt', 'r')
+    temp_file = open('temp.txt', 'w')
+    name = stu_file.readline().rstrip('\n')
+
+    found = False
+    while name != '':
+        id_num = stu_file.readline().rstrip('\n')
+        major = stu_file.readline().rstrip('\n')
+        gpa = stu_file.readline().rstrip('\n')
+        if name != search:
+            temp_file.write(name + '\n')
+            temp_file.write(id_num + '\n')
+            temp_file.write(major + '\n')
+            temp_file.write(gpa + '\n')
+        else:
+            found = True
+        name = stu_file.readline().rstrip('\n')
+    stu_file.close()
+    temp_file.close()
+
+    os.remove('students.txt')
+    os.rename('temp.txt', 'students.txt')
+
+    if found:
+        print('The student record has been deleted.')
+    else:
+        print('The student record was not found in the file.')
+
+
+
+def print_menu_options():
+    print()
+    print('What would you like to do? ')
+    print(' - Save student records (W/w)')
+    print(' - Read student records (R/r)')
+    print(' - Edit a student record (E/e)')
+    print(' - Delete a student record (D/d)')
+    print(' - Quit the program (Q/q)')
+    choice = input('Enter your choice: ')
+    return choice.upper()
 
 
 def save_student_records():
@@ -64,12 +116,14 @@ def save_student_records():
     for count in range(1, num_students + 1):
         print('Enter data for student #', count, sep='')
         name = input('Name: ')
-        id_num = int(input('ID Number: '))
+        id_num = input('ID Number: ')
         major = input('Major: ')
+        gpa = input('GPA: ')
 
         stu_file.write(name + '\n')
         stu_file.write(id_num + '\n')
         stu_file.write(major + '\n')
+        stu_file.write(gpa + '\n')
 
         print() # print a blank line
 
@@ -96,11 +150,13 @@ def read_student_records():
         name = name.rstrip('\n')
         id_number = id_number.rstrip('\n')
         major = major.rstrip('\n')
+        gpa = gpa.rstrip('\n')
 
         # Display the record
         print('Name:', name)
         print('ID Number:', id_number)
         print('Major:', major)
+        print('GPA:', gpa)
 
         # Print a blank line
         print()
@@ -111,5 +167,4 @@ def read_student_records():
     # Don't forget to close the file
     stu_file.close()
 
-# save_student_records()
-edit_student_record()
+main()

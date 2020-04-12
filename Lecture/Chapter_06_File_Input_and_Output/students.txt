@@ -1,9 +1,6 @@
-Ingrid Virgo
-2363
+John Doe
+1234
 Computer Science
-Julia Rich
-2364
-Marketing
-Greg Young
-2365
-Chemistry
+Jane Doe
+1235
+Accounting
